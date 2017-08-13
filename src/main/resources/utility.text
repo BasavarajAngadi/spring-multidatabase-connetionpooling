@@ -1,0 +1,17 @@
+####Derby Databse table 
+create table employeinfo(ID integer,name varchar(50),lastname varchar(50))
+insert into employeinfo values(1,'raj','a')
+select * from employeinfo
+######MySql Database table
+
+CREATE TABLE  `office`.`empldetails` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL DEFAULT '',
+  `lastname` varchar(45) NOT NULL DEFAULT '',
+  `place` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`ID`)
+) 
+
+################################
+http://localhost:8088/spring-multidatabase-connetionpooling/getEmpInfoFromDerbyDbById/4
+http://localhost:8088/spring-multidatabase-connetionpooling/getEmpInfoFromMySqlDbById/1
