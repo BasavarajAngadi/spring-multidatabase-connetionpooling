@@ -40,7 +40,7 @@ public class MySqlDbConfig {
         return dataSource;
     }
     
-    
+    //Session is  associated to  Primary data base so we can do save and update operation using
     @Primary
 	@Bean(name = "mySqlEntityManagerFactory")
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(
@@ -49,7 +49,15 @@ public class MySqlDbConfig {
 		return builder.dataSource(dataSource).packages("com.braj.mysql.entity")
 				.build();
 	}
-
+  //Include  for oracle  SQL Server and other database  not required for MYSQL and DERBY Datbase
+  	/*@Bean
+  	public AnnotationMBeanExporter mbeanExporter() {
+  	    AnnotationMBeanExporter exporterThatCatchesExceptions = new AnnotationMBeanExporter();
+  	    exporterThatCatchesExceptions.addExcludedBean("derbyDataSource");
+  	    exporterThatCatchesExceptions.setRegistrationPolicy(RegistrationPolicy.IGNORE_EXISTING);;
+  	    return exporterThatCatchesExceptions;
+  	}*/
+  	 
     
     private static class JndiPropertyHolder {
         private String jndiName;
